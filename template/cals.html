@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calorie Counter</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            function addToLog(meal){
+                var food = document.getElementById("name").textContent;
+                var calories = document.getElementById("cals").textContent;
+            
+                var logTable = document.getElementById(meal);
+                console.log(logTable);
+                var newRow = logTable.insertRow(-1);
+            
+                var foodSlot = newRow.insertCell(0);
+                var calsSlot = newRow.insertCell(1);
+            
+                foodSlot.innerHTML = food;
+                calsSlot.innerHTML = calories;
+                window.location.href = "log.html";
+            }
+            </script>
+    </head>
+    <body>
+        <h1>Nutrition Facts</h1>
+        <h2>The food you have searched up is {{ n2[0] }}. One serving of {{ n2[0] }} contains {{ n2[1] }} calories, {{ n2[2] }} grams of protein, {{ n2[3] }} grams of fat, and {{ n2[4] }} grams of carbohydrates</h2>
+        <form method="POST" action="/adding">
+            <input type="hidden" id="name" value="{{ n2[0] }}" />
+            <input type="hidden" id="cals" value="{{ n2[1] }}" />
+            <input type="hidden" id="protein" value="{{ n2[2] }}" />
+            <input type="hidden" id="fat" value="{{ n2[3] }}" />
+            <input type="hidden" id="carbs" value="{{ n2[4] }}" />
+            <button type="button" id = "breakfast_button" onclick="addToLog('breakfast_table')">Add to breakfast</button>
+            <button type="button" id = "lunch_button" onclick="addToLog('lunch_table')">Add to lunch</button>
+            <button type="button" id = "dinner_button" onclick="addToLog('dinner_table')">Add to dinner</button>
+            <button type="button" id = "snack_button" onclick="addToLog('snack_table')">Add to snack</button>
+            <!--<script type="text/javascript" src="js/add-to-log.js"></script> -->
+        </form>
+    </body>
+</html>
