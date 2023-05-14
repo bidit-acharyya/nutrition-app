@@ -1,0 +1,2 @@
+# nutrition-app
+This is an app that allows the user to search up any food available out of the hundreds of thousands using the Edamam Food Database API. I am currently still working on allowing the user to add the food they searched up to a meal log which will keep track of their daily caloric consumption along with the macronutrients. Will enhance the UI soon with CSS and JS as well once the meal log is working.
